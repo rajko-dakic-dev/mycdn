@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cover Flow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" id="stage" aria-roledescription="carousel" aria-label="Recent projects" tabindex="0">
+    <article class="card" style="--h:215">
+      <div class="thumb"></div>
+      <h2>B2B SaaS marketing site</h2>
+      <p>A fourteen-page marketing site rebuilt from a Figma library, with a CMS for release notes and a design system the in-house team now extends.</p>
+      <ul class="tags"><li>SaaS</li><li>CMS</li><li>Design system</li></ul>
+    </article>
+    <article class="card" style="--h:265">
+      <div class="thumb"></div>
+      <h2>Design studio portfolio</h2>
+      <p>Image-led case studies with scroll and hover motion, structured so new projects drop in without touching the layout.</p>
+      <ul class="tags"><li>Studio</li><li>Animation</li><li>Portfolio</li></ul>
+    </article>
+    <article class="card" style="--h:195">
+      <div class="thumb"></div>
+      <h2>E-commerce storefront</h2>
+      <p>Product and collection templates with filtered listings, built so the merchandising team ships new ranges without a developer.</p>
+      <ul class="tags"><li>E-commerce</li><li>Templates</li><li>Editor-friendly</li></ul>
+    </article>
+    <article class="card" style="--h:170">
+      <div class="thumb"></div>
+      <h2>Product launch page</h2>
+      <p>A single long-scroll page built from approved Figma frames, with sections the marketing team can reorder on their own.</p>
+      <ul class="tags"><li>Landing page</li><li>Components</li></ul>
+    </article>
+    <article class="card" style="--h:240">
+      <div class="thumb"></div>
+      <h2>Nonprofit content hub</h2>
+      <p>A CMS-driven site where editors publish stories and events without touching the design.</p>
+      <ul class="tags"><li>CMS</li><li>Blog</li><li>Events</li></ul>
+    </article>
+  </main>
+
+  <div class="controls">
+    <button class="btn" id="prev" aria-label="Previous project">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="btn" id="next" aria-label="Next project">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="coverflow.js"></script>
+</body>
+</html>

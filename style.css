@@ -1,0 +1,58 @@
+:root{
+  --card-w:min(380px,62vw);
+  --blue:#1f6fd1;
+  --blue-soft:#4a9bff;
+  --ink:#e8edf5;
+  --muted:#9aa6ba;
+  --surface:#12161f;
+  --line:#2a3342;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:transparent;color:var(--ink);font-family:"Ubuntu","Segoe UI",system-ui,sans-serif}
+body{display:flex;flex-direction:column;overflow:hidden}
+
+.stage{
+  position:relative;flex:1;min-height:420px;
+  perspective:1400px;touch-action:pan-y;user-select:none;outline:none;
+}
+.card{
+  position:absolute;left:50%;top:50%;width:var(--card-w);
+  padding:14px 14px 18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  cursor:pointer;will-change:transform;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s,border-color .3s;
+}
+.card.is-active{border-color:#3b5f96;cursor:default}
+.thumb{
+  aspect-ratio:16/10;border-radius:12px;margin-bottom:16px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,hsl(var(--h) 65% 26%),#090c12 75%);
+}
+.thumb::before{
+  content:"";position:absolute;left:8%;top:14%;width:42%;height:12%;border-radius:4px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 22px 0 rgba(255,255,255,.88),0 44px 0 rgba(255,255,255,.5);
+}
+.thumb::after{
+  content:"";position:absolute;right:8%;top:14%;width:34%;height:64%;border-radius:6px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
+}
+.card h2{margin:0 0 8px;font-size:1.25rem;font-weight:500;line-height:1.25}
+.card p{margin:0 0 14px;font-size:.92rem;line-height:1.55;color:var(--muted)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{padding:5px 12px;border-radius:999px;background:#13253f;color:var(--blue-soft);font-size:.78rem}
+
+.controls{display:flex;justify-content:center;gap:16px;padding:0 0 20px}
+.btn{
+  width:52px;height:44px;border:0;border-radius:22px;background:var(--blue);color:#fff;cursor:pointer;
+  display:grid;place-items:center;transition:background .2s,opacity .2s;
+}
+.btn:hover{background:var(--blue-soft)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible,.stage:focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px}
+
+@media (max-width:600px){
+  .card p{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .card{transition:none}
+}
